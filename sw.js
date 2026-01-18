@@ -1,7 +1,7 @@
 const CACHE_NAME = "bar-app-cache-v1";
 const urlsToCache = [
   "./",
-  "./bar.html",
+  "./index.html",
   "./bar.js",
   "./bar.css",
   "./manifest.json",
