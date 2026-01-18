@@ -1,7 +1,7 @@
 // =====================
 // ÉLÉMENTS GLOBAUX
 // =====================
-const totalElement = document.getElementById("total");
+totalElement = document.getElementById("total");
 
 // Stock de la part MANUELLE des consignes (peut être négative)
 const consigneManuelle = {
