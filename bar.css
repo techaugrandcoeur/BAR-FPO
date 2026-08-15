@@ -3,7 +3,7 @@
 ----------------------------- */
 body {
   margin: 0;
-  padding: 10px;
+  padding: 15px;
   font-family: system-ui, Arial, sans-serif;
   background: #431AA2;
   color: white;
@@ -11,12 +11,12 @@ body {
 
 /* Tous les items (boissons + consignes) */
 .item {
-  display: flex;              /* Flexbox pour aligner les éléments */
-  align-items: center;        /* alignement vertical */
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 8px;                   /* espace entre boutons et quantités */
+  gap: 12px;
   background: rgba(255, 255, 255, 0.1);
-  padding: 12px;
+  padding: 14px;
   margin-bottom: 10px;
   border-radius: 10px;
 }
@@ -24,33 +24,35 @@ body {
 /* Nom du produit prend tout l’espace restant */
 .item span:first-child {
   flex: 1;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 /* Quantité affichée */
 .quantite {
-  min-width: 32px;
+  min-width: 40px;
   text-align: center;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
-/* BOUTONS */
+/* -----------------------------
+   BOUTONS
+----------------------------- */
 button {
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
-  touch-action: manipulation; /* meilleure réactivité sur mobile */
+  touch-action: manipulation;
   user-select: none;
   transition: transform 0.1s ease;
 }
 
 button:active {
-  transform: scale(0.95); /* effet tactile */
+  transform: scale(0.95);
 }
 
 /* Couleurs des boutons */
@@ -68,14 +70,18 @@ button:active {
   background: #FF9800;
 }
 
-/* Total */
+/* -----------------------------
+   TOTAL
+----------------------------- */
 h2 {
   text-align: center;
   margin-top: 20px;
   font-size: 22px;
 }
 
-/* Bouton RESET */
+/* -----------------------------
+   BOUTON RESET
+----------------------------- */
 #reset {
   width: 100%;
   margin-top: 10px;
@@ -104,17 +110,22 @@ h2 {
     font-weight: 600;
   }
 
+  /* Gros boutons pour utilisation au doigt */
   button {
     width: 72px;
     height: 72px;
     font-size: 32px;
   }
 
+  /* Quantité */
   .quantite {
     min-width: 52px;
     font-size: 22px;
   }
 
+  /* -----------------------------
+     TOTAL SUR SMARTPHONE
+  ----------------------------- */
   h2 {
     font-size: 36px;
     font-weight: 700;
@@ -122,9 +133,18 @@ h2 {
     margin-bottom: 20px;
   }
 
+  /* Montant du total encore plus visible */
   #total {
     font-size: 42px;
     font-weight: 800;
+  }
+
+  /* -----------------------------
+     BOUTON RESET SUR SMARTPHONE
+  ----------------------------- */
+  #reset {
+    padding: 18px;
+    font-size: 18px;
   }
 }
 
@@ -133,8 +153,8 @@ h2 {
 ----------------------------- */
 @media (min-width: 481px) and (max-width: 768px) {
   .item {
-    gap: 12px;
-    padding: 14px;
+    gap: 14px;
+    padding: 16px;
   }
 
   .item span:first-child {
@@ -142,9 +162,9 @@ h2 {
   }
 
   button {
-    width: 48px;
-    height: 48px;
-    font-size: 22px;
+    width: 54px;
+    height: 54px;
+    font-size: 24px;
   }
 
   .quantite {
