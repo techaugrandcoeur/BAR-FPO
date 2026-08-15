@@ -1,27 +1,166 @@
 /* -----------------------------
+   BASE STYLING
+----------------------------- */
+body {
+  margin: 0;
+  padding: 15px;
+  font-family: system-ui, Arial, sans-serif;
+  background: #1a65a2;
+  color: white;
+}
+
+/* Tous les items (boissons + consignes) */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: **12px**;                   /* espace un peu plus grand */
+  background: rgba(255, 255, 255, 0.1);
+  padding: **14px**;               /* zone plus confortable */
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* Nom du produit prend tout l’espace restant */
+.item span:first-child {
+  flex: 1;
+  font-size: **17px**;
+}
+
+/* Quantité affichée */
+.quantite {
+  min-width: **40px**;
+  text-align: center;
+  font-weight: bold;
+  font-size: **18px**;
+}
+
+/* BOUTONS */
+button {
+  width: **56px**;
+  height: **56px**;
+  border-radius: 50%;
+  border: none;
+  font-size: **24px**;
+  font-weight: bold;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  transition: transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Couleurs des boutons */
+.plus {
+  background: #4CAF50;
+  color: white;
+}
+
+.moins {
+  background: #F44336;
+  color: white;
+}
+
+.consigne-btn {
+  background: #FF9800;
+}
+
+/* Total */
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+/* Bouton RESET */
+#reset {
+  width: 100%;
+  margin-top: 10px;
+  padding: **18px**;
+  font-size: **18px**;
+  border-radius: 10px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+/* -----------------------------
    MOBILE FIRST
 ----------------------------- */
 @media (max-width: 480px) {
   .item {
     flex-wrap: wrap;
-    **padding: 18px;**
-    **gap: 14px;**
+    **padding: 16px;**
+    **gap: 12px;**
   }
 
   .item span:first-child {
     flex-basis: 100%;
-    margin-bottom: **10px;**
-    **font-size: 19px;**
+    margin-bottom: **8px**;
+    **font-size: 18px;**
   }
 
   button {
-    **width: 64px;**
-    **height: 64px;**
-    **font-size: 30px;**
+    **width: 58px;**
+    **height: 58px;**
+    **font-size: 26px;**
   }
 
   .quantite {
-    **min-width: 48px;**
-    **font-size: 22px;**
+    **min-width: 44px;**
+    **font-size: 20px;**
+  }
+}
+
+/* -----------------------------
+   TABLETTE / PETITS ÉCRANS
+----------------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+  .item {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .item span:first-child {
+    font-size: 18px;
+  }
+
+  button {
+    width: **54px**;
+    height: **54px**;
+    font-size: **24px**;
+  }
+
+  .quantite {
+    font-size: 18px;
+    min-width: 36px;
+  }
+}
+
+/* -----------------------------
+   GRAND ÉCRAN
+----------------------------- */
+@media (min-width: 769px) {
+  .item {
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .item span:first-child {
+    font-size: 18px;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .quantite {
+    font-size: 18px;
+    min-width: 36px;
   }
 }
