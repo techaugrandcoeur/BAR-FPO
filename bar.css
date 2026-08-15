@@ -3,7 +3,7 @@
 ----------------------------- */
 body {
   margin: 0;
-  padding: 15px;
+  padding: 10px;
   font-family: system-ui, Arial, sans-serif;
   background: #431AA2;
   color: white;
@@ -11,12 +11,12 @@ body {
 
 /* Tous les items (boissons + consignes) */
 .item {
-  display: flex;
-  align-items: center;
+  display: flex;              /* Flexbox pour aligner les éléments */
+  align-items: center;        /* alignement vertical */
   justify-content: space-between;
-  gap: **12px**;                   /* espace un peu plus grand */
+  gap: 8px;                   /* espace entre boutons et quantités */
   background: rgba(255, 255, 255, 0.1);
-  padding: **14px**;               /* zone plus confortable */
+  padding: 12px;
   margin-bottom: 10px;
   border-radius: 10px;
 }
@@ -24,33 +24,33 @@ body {
 /* Nom du produit prend tout l’espace restant */
 .item span:first-child {
   flex: 1;
-  font-size: **17px**;
+  font-size: 16px;
 }
 
 /* Quantité affichée */
 .quantite {
-  min-width: **40px**;
+  min-width: 32px;
   text-align: center;
   font-weight: bold;
-  font-size: **18px**;
+  font-size: 16px;
 }
 
 /* BOUTONS */
 button {
-  width: **56px**;
-  height: **56px**;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
-  font-size: **24px**;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  touch-action: manipulation;
+  touch-action: manipulation; /* meilleure réactivité sur mobile */
   user-select: none;
   transition: transform 0.1s ease;
 }
 
 button:active {
-  transform: scale(0.95);
+  transform: scale(0.95); /* effet tactile */
 }
 
 /* Couleurs des boutons */
@@ -79,8 +79,8 @@ h2 {
 #reset {
   width: 100%;
   margin-top: 10px;
-  padding: **18px**;
-  font-size: **18px**;
+  padding: 14px;
+  font-size: 16px;
   border-radius: 10px;
   background: #222;
   color: white;
@@ -93,25 +93,38 @@ h2 {
 @media (max-width: 480px) {
   .item {
     flex-wrap: wrap;
-    **padding: 16px;**
-    **gap: 12px;**
+    padding: 18px;
+    gap: 16px;
   }
 
   .item span:first-child {
     flex-basis: 100%;
-    margin-bottom: **8px**;
-    **font-size: 18px;**
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
   }
 
   button {
-    **width: 58px;**
-    **height: 58px;**
-    **font-size: 26px;**
+    width: 72px;
+    height: 72px;
+    font-size: 32px;
   }
 
   .quantite {
-    **min-width: 44px;**
-    **font-size: 20px;**
+    min-width: 52px;
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 28px;
+    margin-bottom: 20px;
+  }
+
+  #total {
+    font-size: 42px;
+    font-weight: 800;
   }
 }
 
@@ -120,8 +133,8 @@ h2 {
 ----------------------------- */
 @media (min-width: 481px) and (max-width: 768px) {
   .item {
-    gap: 14px;
-    padding: 16px;
+    gap: 12px;
+    padding: 14px;
   }
 
   .item span:first-child {
@@ -129,9 +142,9 @@ h2 {
   }
 
   button {
-    width: **54px**;
-    height: **54px**;
-    font-size: **24px**;
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
   }
 
   .quantite {
