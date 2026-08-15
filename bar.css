@@ -100,7 +100,8 @@ h2 {
   .item span:first-child {
     flex-basis: 100%;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 600;
   }
 
   button {
@@ -113,6 +114,13 @@ h2 {
     min-width: 52px;
     font-size: 22px;
   }
+
+  **h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 28px;
+    margin-bottom: 16px;
+  }**
 }
 
 /* -----------------------------
