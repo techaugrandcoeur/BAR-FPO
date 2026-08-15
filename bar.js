@@ -3,12 +3,10 @@
 // =====================
 totalElement = document.getElementById("total");
 
-// Stock de la part MANUELLE des consignes (peut être négative)
+// Stock de la part MANUELLE des consignes 
 const consigneManuelle = {
-  consigne12:0,
-  consigne25: 0,
-  consigne50: 0,
-  consignepichet: 0
+  consigne:0,
+  pichet: 0
 };
 
 // =====================
@@ -80,16 +78,28 @@ document.querySelectorAll(".moins:not(.consigne-btn)").forEach(btn => {
 
 // =====================
 // BOUTONS + / - DES CONSIGNES (MANUEL)
-// ➜ AUTORISE LE NÉGATIF
+// ➜ N'AUTORISE PAS LE NÉGATIF
 // =====================
 document.querySelectorAll(".consigne-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const id = btn.dataset.id;
-    const delta = btn.classList.contains("plus") ? 1 : -1;
+    const qte = getQuantite(id);
 
-    consigneManuelle[id] += delta;
+    let nouvelleQte = Number(qte.textContent);
 
-    recalculerConsignes();
+    if (btn.classList.contains("plus")) {
+      nouvelleQte += 1;
+    } else {
+      nouvelleQte -= 1;
+    }
+
+    // La consigne classique ne peut pas descendre sous 0
+    if (id === "consigne") {
+      nouvelleQte = Math.max(0, nouvelleQte);
+    }
+
+    qte.textContent = nouvelleQte;
+
     recalculerTotal();
   });
 });
