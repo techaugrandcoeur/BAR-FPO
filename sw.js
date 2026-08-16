@@ -1,4 +1,4 @@
-const CACHE_NAME = "bar-app-cache-v1";
+const CACHE_NAME = "bar-app";
 const urlsToCache = [
   "./",
   "./index.html",
